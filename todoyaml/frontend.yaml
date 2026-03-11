@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: todo-frontend
-          image: mahendravarmasa/todofrontend:latest
+          image: mahendravarmasa/todofrontend:daaccac2e5b432e69ed0d4817d5ab4ae62f9751a
           ports:
             - containerPort: 3000
           env:
