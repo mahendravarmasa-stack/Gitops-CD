@@ -15,14 +15,13 @@ spec:
         tier: todo-backend
     spec:
       containers:
-      - name: todo-backend
-        image: mahendravarmasa/todobackend:latest
-        ports:
-        - containerPort: 8000
-        env:
-          - name: MONGODB_URL
-            value: "mongodb://mongodb:27017"
-
+        - name: todo-backend
+          image: mahendravarmasa/todobackend:latest
+          ports:
+            - containerPort: 8000
+          env:
+            - name: MONGODB_URL
+              value: "mongodb://mongodb:27017"
 ---
 apiVersion: v1
 kind: Service
