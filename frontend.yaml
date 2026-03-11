@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-frontend
+spec:
+  replicas: 3
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      tier: todo-frontend
+  template:
+    metadata:
+      labels:
+        tier: todo-frontend
+    spec:
+      containers:
+      - name: todo-frontend
+        image: mahendravarmasa/todofrontend:latest
+        ports:
+        - containerPort: 3000
+        env:
+          - name: REACT_APP_API_BASE_URL
+            value: "http://todo-backend:8000"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: todo-frontend
+spec:
+  selector:
+    tier: todo-frontend
+  ports:
+  - port: 80
+    targetPort: 3000
+    nodePort: 30007
