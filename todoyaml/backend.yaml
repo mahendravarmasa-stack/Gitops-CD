@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: todo-backend
-          image: mahendravarmasa/todobackend:daaccac2e5b432e69ed0d4817d5ab4ae62f9751a
+          image: mahendravarmasa/todobackend:2292f48292f116c48f408e02e4b09b37e73cf9a3
           ports:
             - containerPort: 8000
           env:
@@ -32,6 +32,6 @@ spec:
   selector:
     tier: todo-backend
   ports:
-  - port: 8000
-    targetPort: 8000
-    nodePort: 30008
+    - port: 8000
+      targetPort: 8000
+      nodePort: 30008
