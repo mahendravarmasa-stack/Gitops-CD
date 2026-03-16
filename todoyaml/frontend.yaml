@@ -29,6 +29,7 @@ kind: Service
 metadata:
   name: todo-frontend
 spec:
+  type: NodePort
   selector:
     tier: todo-frontend
   ports:

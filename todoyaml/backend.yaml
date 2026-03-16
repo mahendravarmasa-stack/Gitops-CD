@@ -29,11 +29,10 @@ kind: Service
 metadata:
   name: todo-backend
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     tier: todo-backend
   ports:
-    - name: todo-backend
-      port: 8000
-      targetPort: 8000
-      protocol: TCP
+  - port: 8000
+    targetPort: 8000
+    nodePort: 30008
